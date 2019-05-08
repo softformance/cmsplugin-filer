@@ -1,0 +1,5 @@
+django>=1.11,<2
+django-reversion
+django-mptt
+
+-r base_1.11.txt

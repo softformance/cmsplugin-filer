@@ -1,0 +1,9 @@
+aldryn-apphook-reload
+coverage
+django-appconf
+djangocms-helper
+django-filer
+djangocms-text-ckeditor
+html5lib
+flake8
+django-polymorphic

@@ -5,7 +5,6 @@ from __future__ import unicode_literals
 import os
 from tempfile import mkdtemp
 
-
 HELPER_SETTINGS = {
     'INSTALLED_APPS': [
         # filer configuration
@@ -49,7 +48,7 @@ HELPER_SETTINGS = {
         'easy_thumbnails.processors.filters',
     ),
     'FILE_UPLOAD_TEMP_DIR': mkdtemp(),
-    'FILER_IMAGE_MODEL': False,
+    'FILER_IMAGE_MODEL': 'filer.Image',
 }
 if os.environ.get('CUSTOM_IMAGE', False):
     HELPER_SETTINGS['FILER_IMAGE_MODEL'] = os.environ.get('CUSTOM_IMAGE', False)
@@ -59,6 +58,7 @@ if os.environ.get('CUSTOM_IMAGE', False):
 def run():
     from djangocms_helper import runner
     runner.cms('cmsplugin_filer_file')
+
 
 if __name__ == "__main__":
     run()
