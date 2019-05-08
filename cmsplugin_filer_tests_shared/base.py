@@ -7,10 +7,14 @@ from django.test import TransactionTestCase
 from django.utils.translation import override
 
 from cms import api
-from cms.utils import get_cms_setting
+from easy_thumbnails.tests.test_processors import create_image
+
+try:
+    from cms.utils import get_cms_setting
+except ImportError:
+    from cms.utils.conf import get_cms_setting
 
 from filer.models.filemodels import File
-from filer.tests.helpers import create_image
 
 
 class BasePluginTestMixin(object):

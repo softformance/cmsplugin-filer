@@ -1,7 +1,8 @@
-from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
-from django.utils.translation import ugettext_lazy as _
+from cms.plugin_pool import plugin_pool
 from django.template.loader import select_template
+from django.utils.translation import ugettext_lazy as _
+
 from . import models
 from .conf import settings
 
@@ -96,5 +97,6 @@ class FilerTeaserPlugin(CMSPluginBase):
             self.TEMPLATE_NAME % 'default',
         ))
         return template
+
 
 plugin_pool.register_plugin(FilerTeaserPlugin)

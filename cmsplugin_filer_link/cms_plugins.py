@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.templatetags.static import static
-from django.utils.translation import ugettext as _
-
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
+from django.templatetags.static import static
+from django.utils.translation import ugettext as _
 
 from .forms import FilerLinkForm
 from .models import FilerLinkPlugin as FilerLinkPluginModel

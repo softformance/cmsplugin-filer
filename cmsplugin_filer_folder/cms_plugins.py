@@ -1,13 +1,13 @@
-from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
+from cms.plugin_pool import plugin_pool
 from django.template.loader import select_template
 from django.utils.translation import ugettext_lazy as _
-from . import models
-from .conf import settings
-
+from filer.models.abstract import BaseImage
 from filer.models.filemodels import File
 from filer.models.foldermodels import Folder
-from filer.models.abstract import BaseImage
+
+from . import models
+from .conf import settings
 
 
 class FilerFolderPlugin(CMSPluginBase):

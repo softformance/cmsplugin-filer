@@ -1,12 +1,13 @@
 from __future__ import unicode_literals
 
-from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
+from cms.plugin_pool import plugin_pool
 from django.templatetags.static import static
 from django.utils.translation import ugettext_lazy as _
+
 from cmsplugin_filer_video import settings
-from cmsplugin_filer_video.models import FilerVideo
 from cmsplugin_filer_video.forms import VideoForm
+from cmsplugin_filer_video.models import FilerVideo
 
 
 class FilerVideoPlugin(CMSPluginBase):
@@ -58,5 +59,6 @@ class FilerVideoPlugin(CMSPluginBase):
 
     def icon_src(self, instance):
         return static("filer/icons/video_%sx%s.png" % (32, 32,))
+
 
 plugin_pool.register_plugin(FilerVideoPlugin)

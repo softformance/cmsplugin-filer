@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from cms.plugin_base import CMSPluginBase
+from cms.plugin_pool import plugin_pool
 from django.template.loader import select_template
 from django.templatetags.static import static
 from django.utils.translation import ugettext_lazy as _
 
-from cms.plugin_base import CMSPluginBase
-from cms.plugin_pool import plugin_pool
-
+from .conf import settings
 from .forms import FilerImageForm
 from .models import FilerImage
-from .conf import settings
 
 
 class FilerImagePlugin(CMSPluginBase):
@@ -144,4 +143,6 @@ class FilerImagePlugin(CMSPluginBase):
                 return thumbnail.url
         else:
             return static("filer/icons/missingfile_%sx%s.png" % (32, 32,))
+
+
 plugin_pool.register_plugin(FilerImagePlugin)
