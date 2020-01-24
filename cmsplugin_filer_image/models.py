@@ -7,7 +7,10 @@ from django.utils.translation import ugettext_lazy as _
 from filer.fields.file import FilerFileField
 from filer.fields.image import FilerImageField
 from filer.models import ThumbnailOption  # NOQA
-from filer.utils.compatibility import python_2_unicode_compatible
+try:
+    from filer.utils.compatibility import python_2_unicode_compatible
+except ImportError:
+    from django.utils.encoding import python_2_unicode_compatible
 
 from cms.models import CMSPlugin
 from cms.models.fields import PageField
